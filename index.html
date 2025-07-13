@@ -49,6 +49,8 @@
           <a href="#projects" class="hover:text-purple-300 transition">Projekte</a>
           <a href="#timeline" class="hover:text-purple-300 transition">Timeline</a>
           <a href="#contact" class="hover:text-purple-300 transition">Kontakt</a>
+          <a href="#community" class="hover:text-purple-300 transition">Community</a>
+          <a href="#roadmap" class="hover:text-purple-300 transition">Roadmap</a>
         </div>
       </div>
     </div>
@@ -94,6 +96,37 @@
     </div>
   </section>
 
+  <!-- Neue Design & UI Erweiterung: Skill Progress Bars -->
+  <section id="skills-progress" class="py-20 text-center bg-purple-800 bg-opacity-30">
+    <h2 class="text-4xl font-semibold mb-12">Skill Progress</h2>
+    <div class="max-w-3xl mx-auto space-y-8 px-4">
+      <div class="text-left">
+        <h3 class="text-xl font-semibold mb-2">Java</h3>
+        <div class="bg-purple-900 rounded-full h-4">
+          <div class="bg-purple-500 h-4 rounded-full w-4/5"></div>
+        </div>
+      </div>
+      <div class="text-left">
+        <h3 class="text-xl font-semibold mb-2">HTML & CSS</h3>
+        <div class="bg-purple-900 rounded-full h-4">
+          <div class="bg-purple-500 h-4 rounded-full w-3/4"></div>
+        </div>
+      </div>
+      <div class="text-left">
+        <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
+        <div class="bg-purple-900 rounded-full h-4">
+          <div class="bg-purple-500 h-4 rounded-full w-2/3"></div>
+        </div>
+      </div>
+      <div class="text-left">
+        <h3 class="text-xl font-semibold mb-2">Python</h3>
+        <div class="bg-purple-900 rounded-full h-4">
+          <div class="bg-purple-500 h-4 rounded-full w-1/2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projekte Section -->
   <section id="projects" class="py-20 text-center">
     <h2 class="text-4xl font-semibold mb-6">Projekte</h2>
@@ -109,76 +142,76 @@
     </div>
   </section>
 
-  <!-- Neue Timeline Section -->
-  <section id="timeline" class="py-20 max-w-4xl mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-12 text-center">Meine Entwicklung</h2>
-    <div class="relative border-l-4 border-purple-500">
-      
-      <!-- Item -->
-      <div class="ml-6 mb-10">
-        <div class="absolute w-4 h-4 bg-purple-500 rounded-full mt-1.5 -left-2 border border-white"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-purple-200">2022</time>
-        <h3 class="text-2xl font-semibold">Java Grundlagen</h3>
-        <p class="mb-4 text-base font-normal text-gray-300">Meine ersten Schritte mit Java und objektorientierter Programmierung.</p>
+  <!-- Timeline Section -->
+  <section id="timeline" class="py-20 max-w-5xl mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-12 text-center">Meine Entwicklung - Timeline</h2>
+    <div class="relative border-l-4 border-purple-400 ml-4">
+      <div class="mb-10 ml-6">
+        <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2022</span>
+        <h3 class="text-xl font-bold mb-1">Erste Programmier-Erfahrungen</h3>
+        <p>Ich habe angefangen, Java zu lernen und einfache Programme geschrieben.</p>
       </div>
-
-      <div class="ml-6 mb-10">
-        <div class="absolute w-4 h-4 bg-purple-500 rounded-full mt-1.5 -left-2 border border-white"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-purple-200">2023</time>
-        <h3 class="text-2xl font-semibold">Minecraft Plugins</h3>
-        <p class="mb-4 text-base font-normal text-gray-300">Begonnen Plugins für Minecraft Server mit Spigot zu entwickeln.</p>
+      <div class="mb-10 ml-6">
+        <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2023</span>
+        <h3 class="text-xl font-bold mb-1">Minecraft Plugin Entwicklung</h3>
+        <p>Begonnen eigene Minecraft Plugins mit Spigot API zu programmieren.</p>
       </div>
-
-      <div class="ml-6 mb-10">
-        <div class="absolute w-4 h-4 bg-purple-500 rounded-full mt-1.5 -left-2 border border-white"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-purple-200">2024</time>
-        <h3 class="text-2xl font-semibold">Webentwicklung</h3>
-        <p class="mb-4 text-base font-normal text-gray-300">HTML, CSS, JavaScript gelernt und erste Websites gebaut.</p>
+      <div class="mb-10 ml-6">
+        <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2024</span>
+        <h3 class="text-xl font-bold mb-1">Webentwicklung mit Tailwind CSS</h3>
+        <p>Erste Webprojekte mit modernen Frameworks und Tailwind CSS umgesetzt.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="ml-6">
-        <div class="absolute w-4 h-4 bg-purple-500 rounded-full mt-1.5 -left-2 border border-white"></div>
-        <time class="mb-1 text-sm font-normal leading-none text-purple-200">2025</time>
-        <h3 class="text-2xl font-semibold">Portfolio & Projekte</h3>
-        <p class="mb-4 text-base font-normal text-gray-300">Diese Website erstellt und komplexe Projekte umgesetzt.</p>
+  <!-- Community & Social Section (nur GitHub) -->
+  <section id="community" class="py-20 text-center bg-purple-900 bg-opacity-40">
+    <h2 class="text-4xl font-semibold mb-8">Community & Social</h2>
+    <a href="https://github.com/ma254" target="_blank" rel="noopener noreferrer"
+       class="inline-flex items-center space-x-3 bg-purple-700 hover:bg-purple-600 transition text-white font-semibold px-6 py-3 rounded-full shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M12 0C5.372 0 0 5.372 0 12c0 5.303 3.438 9.8 8.207 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.996.108-.774.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.93 0-1.31.467-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.323 3.3 1.23a11.48 11.48 0 013.003-.404 11.48 11.48 0 013.003.404c2.29-1.553 3.297-1.23 3.297-1.23.654 1.653.243 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.628-5.48 5.92.43.37.815 1.1.815 2.22v3.293c0 .322.218.694.825.576C20.565 21.796 24 17.3 24 12c0-6.628-5.372-12-12-12z"/>
+      </svg>
+      <span>GitHub</span>
+    </a>
+  </section>
+
+  <!-- Roadmap / Goals 2025/2026 Section -->
+  <section id="roadmap" class="py-20 bg-purple-700 bg-opacity-30 text-center">
+    <h2 class="text-4xl font-semibold mb-12">Roadmap & Ziele 2025/2026</h2>
+    <div class="max-w-4xl mx-auto px-4 space-y-8 text-left">
+      <div>
+        <h3 class="text-2xl font-bold mb-2">2025</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Vertiefung von Full-Stack Webentwicklung mit React und Node.js</li>
+          <li>Start eines eigenen Open-Source-Projekts auf GitHub</li>
+          <li>Erweiterung meiner Minecraft Plugins um Multiplayer Features</li>
+          <li>Community-Building durch Workshops und Tutorials</li>
+        </ul>
       </div>
-
+      <div>
+        <h3 class="text-2xl font-bold mb-2">2026</h3>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Veröffentlichung einer Web-App für Gaming-Communities</li>
+          <li>Teilnahme an Hackathons und Developer-Konferenzen</li>
+          <li>Verbesserung meiner Design-Skills mit UX/UI Kursen</li>
+          <li>Launch eines Blogs zu Coding & Gaming</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- Kontakt Section -->
   <section id="contact" class="py-20 text-center">
     <h2 class="text-4xl font-semibold mb-6">Kontakt</h2>
-    <p>Schreib mir gerne eine E-Mail an <a href="mailto:deinname@example.com" class="underline text-purple-300 hover:text-purple-500">deinname@example.com</a>.</p>
+    <p>Du möchtest mit mir in Kontakt treten? Schreib mir eine Mail an <a href="mailto:ma254@example.com" class="underline hover:text-purple-400">ma254@example.com</a></p>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-purple-900 bg-opacity-90 text-center py-6 mt-20">
-    <p>Build with ❤️ by Ma254</p>
+  <footer class="bg-purple-900 bg-opacity-90 text-center py-6 mt-20 text-sm">
+    &copy; 2024 Ma254. Alle Rechte vorbehalten.
   </footer>
 
-  <!-- Cookie Consent -->
-  <div id="cookie-consent" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-900 bg-opacity-95 text-white rounded-xl px-6 py-4 shadow-lg max-w-xl flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 z-50">
-    <p class="text-center md:text-left max-w-md">
-      Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten. Mit der Nutzung stimmst du unserer <a href="#" class="underline text-purple-300">Datenschutzerklärung</a> zu.
-    </p>
-    <button id="accept-cookies" class="bg-purple-600 hover:bg-purple-700 transition rounded-lg px-4 py-2 font-semibold">Akzeptieren</button>
-  </div>
-
-  <script>
-    // Cookie Consent speichern & ausblenden
-    const consent = localStorage.getItem('cookieConsent');
-    const consentEl = document.getElementById('cookie-consent');
-    const acceptBtn = document.getElementById('accept-cookies');
-
-    if (consent === 'true') {
-      consentEl.style.display = 'none';
-    }
-
-    acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'true');
-      consentEl.style.display = 'none';
-    });
-  </script>
 </body>
 </html>
