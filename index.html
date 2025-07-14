@@ -3,221 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ma254 | Webentwickler & Plugin Developer</title>
+  <title>Über Mich & Fähigkeiten</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <style>
-    body {
-      user-select: none;
+    body { user-select: none; }
+    @keyframes slideInLeft {
+      from { transform: translateX(-100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
     }
+    .slide-in-left { animation: slideInLeft 1s ease-out forwards; }
   </style>
 </head>
 
 <body class="select-none bg-gradient-to-br from-purple-700 to-indigo-800 text-white min-h-screen font-sans">
 
-  <!-- Rechtsklick deaktivieren -->
-  <script>
-    document.addEventListener('contextmenu', event => event.preventDefault());
-  </script>
+<!-- Rechtsklick deaktivieren -->
+<script>
+  document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full bg-purple-900 bg-opacity-90 backdrop-blur-md shadow-md z-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="flex justify-between items-center py-4">
-        <div class="text-2xl font-bold tracking-wide">
-          <a href="#">Ma254</a>
-        </div>
-        <div class="hidden md:flex space-x-8 text-lg">
-          <a href="#home" class="hover:text-purple-300 transition">Home</a>
-          <a href="#about" class="hover:text-purple-300 transition">Über mich</a>
-          <a href="#skills" class="hover:text-purple-300 transition">Fähigkeiten</a>
-          <a href="#projects" class="hover:text-purple-300 transition">Projekte</a>
-          <a href="#timeline" class="hover:text-purple-300 transition">Timeline</a>
-          <a href="#roadmap" class="hover:text-purple-300 transition">Roadmap</a>
-          <a href="#contact" class="hover:text-purple-300 transition">Kontakt</a>
-          <a href="impressum.html" class="hover:text-purple-300 transition">Impressum</a>
-          <a href="datenschutz.html" class="hover:text-purple-300 transition">Datenschutz</a>
-        </div>
+<!-- Navbar mit Burger Menu -->
+<nav class="fixed top-0 left-0 w-full bg-purple-900 bg-opacity-90 backdrop-blur-md shadow-md z-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <div class="text-2xl font-bold tracking-wide">
+        <a href="#">Ma254</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <!-- Burger Icon -->
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <div id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-8 text-lg absolute md:static bg-purple-900 bg-opacity-95 md:bg-transparent top-16 left-0 w-full md:w-auto">
+        <a href="#home" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Home</a>
+        <a href="#about" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Über mich</a>
+        <a href="#skills" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Fähigkeiten</a>
+        <a href="#projects" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Projekte</a>
+        <a href="#timeline" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Timeline</a>
+        <a href="#roadmap" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Roadmap</a>
+        <a href="#contact" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Kontakt</a>
+        <a href="impressum.html" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Impressum</a>
+        <a href="datenschutz.html" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Datenschutz</a>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Hero Section mit Typing Animation -->
-  <section id="home" class="pt-32 pb-20 text-center">
-    <h1 class="text-6xl font-bold mb-4">
-      <span id="typing"></span>
-    </h1>
-    <p class="text-xl max-w-2xl mx-auto">Willkommen auf meiner persönlichen Website. Hier findest du alles über meine Arbeit, Projekte und Hobbys.</p>
-  </section>
+<!-- Hero Section mit Typing Animation -->
+<section id="home" class="pt-32 pb-20 text-center">
+  <h1 class="text-6xl font-bold mb-4 animate-pulse">
+    <span id="typed"></span>
+  </h1>
+  <p class="text-xl max-w-2xl mx-auto">Willkommen auf meiner persönlichen Website. Hier findest du alles über meine Arbeit, Projekte und Hobbys.</p>
+</section>
 
-  <script>
-    const app = document.getElementById('typing');
-    const typewriter = new Typewriter(app, { loop: true, delay: 75 });
-    typewriter
-      .typeString('Hey, ich bin Ma254')
-      .pauseFor(1500)
-      .deleteAll()
-      .typeString('Webentwickler')
-      .pauseFor(1500)
-      .deleteAll()
-      .typeString('Plugin Developer')
-      .pauseFor(1500)
-      .deleteAll()
-      .start();
-  </script>
+<!-- Über Mich Section -->
+<section id="about" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-semibold mb-6">Über mich</h2>
+  <p class="max-w-xl mx-auto mb-4">Ich bin Webentwickler und Designer mit einer Leidenschaft für minimalistische Designs und funktionale Webapps.</p>
+</section>
 
-  <!-- Über Mich Section -->
-  <section id="about" class="py-20 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold mb-6">Über mich</h2>
-    <p class="max-w-xl mx-auto mb-4">Ich bin Webentwickler und Designer mit einer Leidenschaft für minimalistische Designs und funktionale Webapps.</p>
-    <p class="max-w-xl mx-auto">Außerdem entwickle ich Minecraft Plugins mit besonderen Features und Funktionen.</p>
-  </section>
-
-  <!-- Fähigkeiten Section -->
-  <section id="skills" class="py-20 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold mb-12">Meine Fähigkeiten</h2>
-    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-      <!-- Beispiel Skill -->
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-        <h3 class="text-2xl font-bold mb-2">Java</h3>
-        <p>Objektorientierte Sprache für Apps, Backends und Minecraft Plugins.</p>
-      </div>
-      <!-- weitere Skills -->
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-        <h3 class="text-2xl font-bold mb-2">HTML</h3>
-        <p>Strukturierte Webseiten-Inhalte als Grundgerüst jeder Seite.</p>
-      </div>
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-        <h3 class="text-2xl font-bold mb-2">CSS</h3>
-        <p>Styling, Layout, Animationen und Responsive Design.</p>
-      </div>
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-        <h3 class="text-2xl font-bold mb-2">JavaScript</h3>
-        <p>Interaktive Webseiten und Webapps.</p>
-      </div>
+<!-- Fähigkeiten Section -->
+<section id="skills" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-semibold mb-12">Meine Fähigkeiten</h2>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+    <!-- Beispiel Skill -->
+    <div class="relative group bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
+      <h3 class="text-2xl font-bold mb-2">Java</h3>
+      <p class="opacity-0 group-hover:opacity-100 transition duration-500">Minecraft Plugins, Apps & Backends.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Projekte Section -->
-  <section id="projects" class="py-20 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold mb-6">Projekte</h2>
-    <div class="max-w-4xl mx-auto space-y-8 px-4">
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 text-left hover:bg-purple-800 transition">
-        <h3 class="text-2xl font-bold mb-2">Custom Minecraft Plugin</h3>
-        <p>Eigene Plugins mit Spigot/Bukkit API für einzigartige Features.</p>
-        <a href="demo-plugin.html" class="text-purple-300 underline">Live Demo ansehen</a>
-      </div>
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 text-left hover:bg-purple-800 transition">
-        <h3 class="text-2xl font-bold mb-2">Portfolio Website</h3>
-        <p>Diese Website, mit Tailwind CSS und Typing Animation umgesetzt.</p>
-      </div>
+<!-- Projekte Section -->
+<section id="projects" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-semibold mb-6">Projekte</h2>
+  <div class="max-w-4xl mx-auto space-y-8 px-4">
+    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 text-left hover:bg-purple-800 transition">
+      <h3 class="text-2xl font-bold mb-2">Portfolio Website</h3>
+      <p>Diese Website, die du gerade anschaust, ist eines meiner Projekte mit Tailwind CSS.</p>
+      <a href="#" class="underline text-purple-300 hover:text-purple-500">Live Demo ansehen</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Timeline Section -->
-  <section id="timeline" class="py-20 max-w-5xl mx-auto px-4" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold mb-12 text-center">Meine Entwicklung</h2>
-    <div class="relative border-l-4 border-purple-400 ml-4">
-      <!-- Timeline Items -->
-      <div class="mb-10 ml-6">
-        <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2022</span>
-        <h3 class="text-xl font-bold mb-1">Erste Programmier-Erfahrungen</h3>
-        <p>Java Grundlagen gelernt.</p>
-      </div>
-      <div class="mb-10 ml-6">
-        <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2023</span>
-        <h3 class="text-xl font-bold mb-1">Minecraft Plugin Entwicklung</h3>
-        <p>Erste eigenen Plugins programmiert.</p>
-      </div>
-      <div class="mb-10 ml-6">
-        <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2024</span>
-        <h3 class="text-xl font-bold mb-1">Webentwicklung</h3>
-        <p>HTML, CSS, JS intensiv gelernt.</p>
-      </div>
+<!-- Timeline Section -->
+<section id="timeline" class="py-20 max-w-5xl mx-auto px-4" data-aos="fade-up">
+  <h2 class="text-4xl font-semibold mb-12 text-center">Meine Entwicklung - Timeline</h2>
+  <div class="relative border-l-4 border-purple-400 ml-4">
+    <div class="mb-10 ml-6">
+      <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2022</span>
+      <h3 class="text-xl font-bold mb-1">Start mit Java</h3>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Roadmap / Future Ziele -->
-  <section id="roadmap" class="py-20 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold mb-6">Roadmap & Ziele</h2>
-    <p class="max-w-2xl mx-auto mb-4">Hier findest du meinen aktuellen Plan für die kommenden Monate.</p>
-    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6">
-        <h3 class="text-xl font-bold mb-2">React.js lernen</h3>
-        <p>Modern Frontend Frameworks meistern.</p>
-      </div>
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6">
-        <h3 class="text-xl font-bold mb-2">Großes Plugin Release</h3>
-        <p>Ein Major Plugin mit vielen Features veröffentlichen.</p>
-      </div>
-      <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6">
-        <h3 class="text-xl font-bold mb-2">Backend Entwicklung</h3>
-        <p>Spring Boot oder Node.js vertiefen.</p>
-      </div>
-    </div>
-  </section>
+<!-- Roadmap / Zukunft -->
+<section id="roadmap" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-semibold mb-6">Roadmap</h2>
+  <ul class="max-w-xl mx-auto space-y-4 text-left">
+    <li>✅ Portfolio Website fertigstellen</li>
+    <li>🔄 Neues Minecraft Plugin veröffentlichen</li>
+    <li>⏳ Lernziel: React & Next.js</li>
+  </ul>
+</section>
 
-  <!-- Countdown Section -->
-  <section id="countdown" class="py-20 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold mb-6">Countdown zum nächsten Release</h2>
-    <div id="timer" class="text-5xl font-bold"></div>
-  </section>
+<!-- Countdown Section -->
+<section class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-semibold mb-6">Nächstes Projekt Release</h2>
+  <div id="countdown" class="text-2xl font-bold"></div>
+</section>
 
-  <script>
-    const releaseDate = new Date("2025-08-01T00:00:00").getTime();
-    const timerEl = document.getElementById('timer');
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = releaseDate - now;
+<!-- Kontakt Section -->
+<section id="contact" class="py-20 text-center" data-aos="fade-up">
+  <h2 class="text-4xl font-semibold mb-6">Kontakt</h2>
+  <p>Schreib mir gerne eine E-Mail an <a href="mailto:deinname@example.com" class="underline text-purple-300 hover:text-purple-500">deinname@example.com</a>.</p>
+</section>
 
+<!-- Footer -->
+<footer class="bg-purple-900 bg-opacity-90 text-center py-6 mt-20">
+  <p>Build with ❤️ by Ma254</p>
+</footer>
+
+<!-- Cookie Consent -->
+<div id="cookie-consent" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-800 bg-opacity-95 text-white rounded-xl px-6 py-4 shadow-lg max-w-xl flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 z-50">
+  <p class="text-center md:text-left max-w-md text-sm">
+    Diese Website verwendet Cookies. <a href="datenschutz.html" class="underline text-purple-300">Mehr erfahren</a>.
+  </p>
+  <button id="accept-cookies" class="bg-purple-600 hover:bg-purple-700 transition rounded-lg px-4 py-2 text-sm font-semibold">OK</button>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+  new Typed("#typed", {
+    strings: ["Hey, ich bin Ma254", "Webentwickler", "Plugin Developer"],
+    typeSpeed: 50,
+    backSpeed: 25,
+    loop: true
+  });
+
+  // Burger Menu Toggle
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+  // Cookie Consent
+  const consent = localStorage.getItem('cookieConsent');
+  const consentEl = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('accept-cookies');
+  if (consent === 'true') { consentEl.style.display = 'none'; }
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'true');
+    consentEl.style.display = 'none';
+  });
+
+  // Countdown
+  const countdownEl = document.getElementById('countdown');
+  const releaseDate = new Date("2025-08-01T00:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const distance = releaseDate - now;
+    if (distance < 0) {
+      countdownEl.innerHTML = "Projekt veröffentlicht!";
+    } else {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      timerEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      if (distance < 0) timerEl.innerHTML = "Release verfügbar!";
-    }, 1000);
-  </script>
-
-  <!-- Kontakt Section -->
-  <section id="contact" class="py-20 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-semibold mb-6">Kontakt</h2>
-    <p>Schreib mir gerne eine E-Mail an <a href="mailto:deinname@example.com" class="underline text-purple-300 hover:text-purple-500">deinname@example.com</a>.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-purple-900 bg-opacity-90 text-center py-6 mt-20">
-    <p>Build with ❤️ by Ma254</p>
-  </footer>
-
-  <!-- Minimalistischer Cookie Consent -->
-  <div id="cookie-consent" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-800 bg-opacity-95 text-white rounded-xl px-6 py-4 shadow-lg max-w-xl flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 z-50">
-    <p class="text-center md:text-left max-w-md">
-      Diese Website verwendet Cookies. Mit der Nutzung stimmst du unserer <a href="datenschutz.html" class="underline text-purple-300">Datenschutzerklärung</a> zu.
-    </p>
-    <button id="accept-cookies" class="bg-purple-600 hover:bg-purple-700 transition rounded-lg px-4 py-2 font-semibold">OK</button>
-  </div>
-
-  <script>
-    const consent = localStorage.getItem('cookieConsent');
-    const consentEl = document.getElementById('cookie-consent');
-    const acceptBtn = document.getElementById('accept-cookies');
-
-    if (consent === 'true') consentEl.style.display = 'none';
-
-    acceptBtn.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'true');
-      consentEl.style.display = 'none';
-    });
-  </script>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  }, 1000);
+</script>
 </body>
 </html>
