@@ -3,127 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Über Mich & Fähigkeiten</title>
+  <title>Ma254 Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-  <style>
-    body { user-select: none; }
-    @keyframes slideInLeft {
-      from { transform: translateX(-100%); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    .slide-in-left { animation: slideInLeft 1s ease-out forwards; }
-  </style>
 </head>
 
-<body class="select-none bg-gradient-to-br from-purple-700 to-indigo-800 text-white min-h-screen font-sans">
+<body class="bg-gradient-to-br from-purple-700 to-indigo-800 text-white font-sans">
 
 <!-- Rechtsklick deaktivieren -->
 <script>
   document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
 
-<!-- Navbar mit Burger Menu -->
-<nav class="fixed top-0 left-0 w-full bg-purple-900 bg-opacity-90 backdrop-blur-md shadow-md z-50">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="flex justify-between items-center py-4">
-      <div class="text-2xl font-bold tracking-wide">
-        <a href="#">Ma254</a>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-white focus:outline-none">
-          <!-- Burger Icon -->
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
-               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
-      </div>
-      <div id="menu" class="hidden md:flex flex-col md:flex-row md:space-x-8 text-lg absolute md:static bg-purple-900 bg-opacity-95 md:bg-transparent top-16 left-0 w-full md:w-auto">
-        <a href="#home" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Home</a>
-        <a href="#about" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Über mich</a>
-        <a href="#skills" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Fähigkeiten</a>
-        <a href="#projects" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Projekte</a>
-        <a href="#timeline" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Timeline</a>
-        <a href="#roadmap" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Roadmap</a>
-        <a href="#contact" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Kontakt</a>
-        <a href="impressum.html" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Impressum</a>
-        <a href="datenschutz.html" class="block px-4 py-2 hover:bg-purple-800 md:hover:bg-transparent">Datenschutz</a>
-      </div>
-    </div>
-  </div>
+<!-- Navbar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-purple-900 bg-opacity-90 backdrop-blur-md shadow-md">
+  <div class="text-2xl font-bold tracking-wide">Ma254</div>
+  <button id="menu-btn" class="text-white focus:outline-none">
+    <!-- Burger Icon -->
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
 </nav>
+
+<!-- Burger Menu Fullscreen Overlay -->
+<div id="menu" class="fixed inset-0 bg-purple-900 bg-opacity-95 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold hidden z-40">
+  <a href="#home" class="hover:text-purple-300">Home</a>
+  <a href="#about" class="hover:text-purple-300">Über mich</a>
+  <a href="#skills" class="hover:text-purple-300">Fähigkeiten</a>
+  <a href="#projects" class="hover:text-purple-300">Projekte</a>
+  <a href="#timeline" class="hover:text-purple-300">Timeline</a>
+  <a href="#roadmap" class="hover:text-purple-300">Roadmap</a>
+  <a href="#contact" class="hover:text-purple-300">Kontakt</a>
+  <a href="impressum.html" class="hover:text-purple-300">Impressum</a>
+  <a href="datenschutz.html" class="hover:text-purple-300">Datenschutz</a>
+  <button id="close-menu" class="mt-12 text-purple-300 text-lg">Schließen</button>
+</div>
 
 <!-- Hero Section mit Typing Animation -->
 <section id="home" class="pt-32 pb-20 text-center">
-  <h1 class="text-6xl font-bold mb-4 animate-pulse">
+  <h1 class="text-6xl font-bold mb-4">
     <span id="typed"></span>
   </h1>
-  <p class="text-xl max-w-2xl mx-auto">Willkommen auf meiner persönlichen Website. Hier findest du alles über meine Arbeit, Projekte und Hobbys.</p>
+  <p class="text-xl max-w-2xl mx-auto">Willkommen auf meiner persönlichen Website. Hier findest du alles über meine Arbeit und Projekte.</p>
 </section>
 
 <!-- Über Mich Section -->
 <section id="about" class="py-20 text-center" data-aos="fade-up">
   <h2 class="text-4xl font-semibold mb-6">Über mich</h2>
-  <p class="max-w-xl mx-auto mb-4">Ich bin Webentwickler und Designer mit einer Leidenschaft für minimalistische Designs und funktionale Webapps.</p>
+  <p class="max-w-xl mx-auto">Ich bin Ma254, Webentwickler und Minecraft Plugin Developer mit Fokus auf minimalistische Designs und effiziente Backend-Systeme.</p>
 </section>
 
 <!-- Fähigkeiten Section -->
 <section id="skills" class="py-20 text-center" data-aos="fade-up">
   <h2 class="text-4xl font-semibold mb-12">Meine Fähigkeiten</h2>
-  <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-    <!-- Beispiel Skill -->
-    <div class="relative group bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
       <h3 class="text-2xl font-bold mb-2">Java</h3>
-      <p class="opacity-0 group-hover:opacity-100 transition duration-500">Minecraft Plugins, Apps & Backends.</p>
+      <p>Minecraft Plugins, Backends, APIs</p>
+    </div>
+    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
+      <h3 class="text-2xl font-bold mb-2">HTML & CSS</h3>
+      <p>Responsives Webdesign, Tailwind CSS</p>
+    </div>
+    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
+      <h3 class="text-2xl font-bold mb-2">JavaScript</h3>
+      <p>Interaktive UIs, API-Integration</p>
+    </div>
+    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
+      <h3 class="text-2xl font-bold mb-2">PHP</h3>
+      <p>Web Backends & Datenbankanbindung</p>
+    </div>
+    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
+      <h3 class="text-2xl font-bold mb-2">MySQL</h3>
+      <p>Datenbank Design & Queries</p>
+    </div>
+    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
+      <h3 class="text-2xl font-bold mb-2">Linux Server</h3>
+      <p>Debian, Ubuntu, Server Administration</p>
     </div>
   </div>
-</section>
-
-<!-- Projekte Section -->
-<section id="projects" class="py-20 text-center" data-aos="fade-up">
-  <h2 class="text-4xl font-semibold mb-6">Projekte</h2>
-  <div class="max-w-4xl mx-auto space-y-8 px-4">
-    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 text-left hover:bg-purple-800 transition">
-      <h3 class="text-2xl font-bold mb-2">Portfolio Website</h3>
-      <p>Diese Website, die du gerade anschaust, ist eines meiner Projekte mit Tailwind CSS.</p>
-      <a href="#" class="underline text-purple-300 hover:text-purple-500">Live Demo ansehen</a>
-    </div>
-  </div>
-</section>
-
-<!-- Timeline Section -->
-<section id="timeline" class="py-20 max-w-5xl mx-auto px-4" data-aos="fade-up">
-  <h2 class="text-4xl font-semibold mb-12 text-center">Meine Entwicklung - Timeline</h2>
-  <div class="relative border-l-4 border-purple-400 ml-4">
-    <div class="mb-10 ml-6">
-      <span class="absolute -left-6 bg-purple-600 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2022</span>
-      <h3 class="text-xl font-bold mb-1">Start mit Java</h3>
-    </div>
-  </div>
-</section>
-
-<!-- Roadmap / Zukunft -->
-<section id="roadmap" class="py-20 text-center" data-aos="fade-up">
-  <h2 class="text-4xl font-semibold mb-6">Roadmap</h2>
-  <ul class="max-w-xl mx-auto space-y-4 text-left">
-    <li>✅ Portfolio Website fertigstellen</li>
-    <li>🔄 Neues Minecraft Plugin veröffentlichen</li>
-    <li>⏳ Lernziel: React & Next.js</li>
-  </ul>
 </section>
 
 <!-- Countdown Section -->
 <section class="py-20 text-center" data-aos="fade-up">
   <h2 class="text-4xl font-semibold mb-6">Nächstes Projekt Release</h2>
   <div id="countdown" class="text-2xl font-bold"></div>
-</section>
-
-<!-- Kontakt Section -->
-<section id="contact" class="py-20 text-center" data-aos="fade-up">
-  <h2 class="text-4xl font-semibold mb-6">Kontakt</h2>
-  <p>Schreib mir gerne eine E-Mail an <a href="mailto:deinname@example.com" class="underline text-purple-300 hover:text-purple-500">deinname@example.com</a>.</p>
 </section>
 
 <!-- Footer -->
@@ -154,7 +120,9 @@
   // Burger Menu Toggle
   const menuBtn = document.getElementById('menu-btn');
   const menu = document.getElementById('menu');
-  menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
+  const closeBtn = document.getElementById('close-menu');
+  menuBtn.addEventListener('click', () => menu.classList.remove('hidden'));
+  closeBtn.addEventListener('click', () => menu.classList.add('hidden'));
 
   // Cookie Consent
   const consent = localStorage.getItem('cookieConsent');
