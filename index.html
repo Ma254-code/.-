@@ -3,153 +3,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ma254 Portfolio</title>
+  <title>Über Mich & Fähigkeiten</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    body {
+      user-select: none;
+      background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+      color: #ddddee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    a {
+      color: #7f8fa6;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #60a3bc;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f3460;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #53354a;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-purple-700 to-indigo-800 text-white font-sans">
+<body class="select-none min-h-screen">
 
-<!-- Rechtsklick deaktivieren -->
-<script>
-  document.addEventListener('contextmenu', event => event.preventDefault());
-</script>
+  <!-- Rechtsklick deaktivieren -->
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
 
-<!-- Navbar -->
-<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 bg-purple-900 bg-opacity-90 backdrop-blur-md shadow-md">
-  <div class="text-2xl font-bold tracking-wide">Ma254</div>
-  <button id="menu-btn" class="text-white focus:outline-none">
-    <!-- Burger Icon -->
-    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
-         viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-  </button>
-</nav>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-[#1c1c3c] bg-opacity-95 backdrop-blur-md shadow-lg z-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <div class="text-2xl font-bold tracking-wide slide-in-left text-[#c7d2fe]">
+          <a href="#">Ma254</a>
+        </div>
+        <div class="hidden md:flex space-x-8 text-lg text-[#a9b2d1]">
+          <a href="#home" class="hover:text-[#60a3bc] transition">Home</a>
+          <a href="#about" class="hover:text-[#60a3bc] transition">Über mich</a>
+          <a href="#skills" class="hover:text-[#60a3bc] transition">Fähigkeiten</a>
+          <a href="#projects" class="hover:text-[#60a3bc] transition">Projekte</a>
+          <a href="#timeline" class="hover:text-[#60a3bc] transition">Timeline</a>
+          <a href="#contact" class="hover:text-[#60a3bc] transition">Kontakt</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-<!-- Burger Menu Fullscreen Overlay -->
-<div id="menu" class="fixed inset-0 bg-purple-900 bg-opacity-95 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold hidden z-40">
-  <a href="#home" class="hover:text-purple-300">Home</a>
-  <a href="#about" class="hover:text-purple-300">Über mich</a>
-  <a href="#skills" class="hover:text-purple-300">Fähigkeiten</a>
-  <a href="#projects" class="hover:text-purple-300">Projekte</a>
-  <a href="#timeline" class="hover:text-purple-300">Timeline</a>
-  <a href="#roadmap" class="hover:text-purple-300">Roadmap</a>
-  <a href="#contact" class="hover:text-purple-300">Kontakt</a>
-  <a href="impressum.html" class="hover:text-purple-300">Impressum</a>
-  <a href="datenschutz.html" class="hover:text-purple-300">Datenschutz</a>
-  <button id="close-menu" class="mt-12 text-purple-300 text-lg">Schließen</button>
-</div>
+  <!-- Hero Section -->
+  <section id="home" class="pt-32 pb-20 text-center">
+    <h1 class="text-6xl font-bold mb-4 animate-pulse text-[#bac8ff]">Hey, ich bin Ma254</h1>
+    <p class="text-xl max-w-2xl mx-auto text-[#c7d2fe]">Willkommen auf meiner persönlichen Website. Hier findest du alles über meine Arbeit, Projekte und Hobbys.</p>
+  </section>
 
-<!-- Hero Section mit Typing Animation -->
-<section id="home" class="pt-32 pb-20 text-center">
-  <h1 class="text-6xl font-bold mb-4">
-    <span id="typed"></span>
-  </h1>
-  <p class="text-xl max-w-2xl mx-auto">Willkommen auf meiner persönlichen Website. Hier findest du alles über meine Arbeit und Projekte.</p>
-</section>
+  <!-- Über Mich Section -->
+  <section id="about" class="py-20 text-center">
+    <h2 class="text-4xl font-semibold mb-6 text-[#c7d2fe]">Über mich</h2>
+    <p class="max-w-xl mx-auto mb-4 text-[#a9b2d1]">Ich bin Webentwickler und Designer mit einer Leidenschaft für minimalistische Designs und funktionale Webapps. Mein Ziel ist es, digitale Projekte zu gestalten, die Menschen inspirieren.</p>
+    <p class="max-w-xl mx-auto text-[#a9b2d1]">Außerdem spiele ich in meiner Freizeit gerne Minecraft und entwickle eigene Minecraft Plugins, um Server mit besonderen Features und Funktionen zu erweitern.</p>
+  </section>
 
-<!-- Über Mich Section -->
-<section id="about" class="py-20 text-center" data-aos="fade-up">
-  <h2 class="text-4xl font-semibold mb-6">Über mich</h2>
-  <p class="max-w-xl mx-auto">Ich bin Ma254, Webentwickler und Minecraft Plugin Developer mit Fokus auf minimalistische Designs und effiziente Backend-Systeme.</p>
-</section>
+  <!-- Fähigkeiten Section -->
+  <section id="skills" class="py-20 text-center">
+    <h2 class="text-4xl font-semibold mb-12 text-[#c7d2fe]">Meine Fähigkeiten</h2>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+      <div class="relative group bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">Java</h3>
+        <p class="opacity-0 group-hover:opacity-100 transition duration-500 text-[#a9b2d1]">Objektorientierte Sprache für Apps, Backends und Minecraft Plugins.</p>
+      </div>
+      <div class="relative group bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">HTML</h3>
+        <p class="opacity-0 group-hover:opacity-100 transition duration-500 text-[#a9b2d1]">Strukturiert Webseiten-Inhalte und bildet das Grundgerüst jeder Seite.</p>
+      </div>
+      <div class="relative group bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">CSS</h3>
+        <p class="opacity-0 group-hover:opacity-100 transition duration-500 text-[#a9b2d1]">Styling und Layout von Webseiten, Animationen und Responsive Design.</p>
+      </div>
+      <div class="relative group bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">JavaScript</h3>
+        <p class="opacity-0 group-hover:opacity-100 transition duration-500 text-[#a9b2d1]">Interaktive Webseiten, dynamische Inhalte und Web-Apps.</p>
+      </div>
+      <div class="relative group bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">Python</h3>
+        <p class="opacity-0 group-hover:opacity-100 transition duration-500 text-[#a9b2d1]">Einfach zu lernen, für Data Science, Automatisierung und Webentwicklung.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- Fähigkeiten Section -->
-<section id="skills" class="py-20 text-center" data-aos="fade-up">
-  <h2 class="text-4xl font-semibold mb-12">Meine Fähigkeiten</h2>
-  <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-      <h3 class="text-2xl font-bold mb-2">Java</h3>
-      <p>Minecraft Plugins, Backends, APIs</p>
+  <!-- Projekte Section -->
+  <section id="projects" class="py-20 text-center">
+    <h2 class="text-4xl font-semibold mb-6 text-[#c7d2fe]">Projekte</h2>
+    <div class="max-w-4xl mx-auto space-y-8 px-4 text-left">
+      <div class="bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">Custom Minecraft Plugin</h3>
+        <p class="text-[#a9b2d1]">Ein eigenes Minecraft Plugin, mit dem ich neue Befehle, Funktionen und Minispiele auf einem Server erstellt habe, um das Spielerlebnis einzigartig zu gestalten. Entwickelt mit Java und der Spigot/Bukkit API.</p>
+      </div>
+      <div class="bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">Persönliche Portfolio Website</h3>
+        <p class="text-[#a9b2d1]">Diese Website, die du gerade anschaust, ist eines meiner Projekte, um mein Wissen in Webdesign und Tailwind CSS zu vertiefen und mich weiterzuentwickeln.</p>
+      </div>
+      <!-- Custom Plugin -->
+      <div class="bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">Custom Plugin: AdminTools</h3>
+        <p class="text-[#a9b2d1]">Ein AdminTools Plugin für Minecraft, das zusätzliche Commands, Inventar-Viewer und Weltverwaltungsfunktionen integriert. Ziel war es, Serveradmins ein effizientes Management-Tool zu bieten.</p>
+      </div>
+      <!-- Countdown -->
+      <div class="bg-[#1c1c3c] rounded-2xl p-6 hover:bg-[#29294b] transition">
+        <h3 class="text-2xl font-bold mb-2 text-[#bac8ff]">Nächstes Großprojekt – Countdown</h3>
+        <p class="mb-4 text-[#a9b2d1]">Mein nächstes großes Projekt startet bald! Unten siehst du den Countdown bis zum Release.</p>
+        <div id="countdown" class="text-3xl font-bold text-[#60a3bc]"></div>
+      </div>
     </div>
-    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-      <h3 class="text-2xl font-bold mb-2">HTML & CSS</h3>
-      <p>Responsives Webdesign, Tailwind CSS</p>
+  </section>
+
+  <!-- Timeline Section -->
+  <section id="timeline" class="py-20 max-w-5xl mx-auto px-4 text-[#a9b2d1]">
+    <h2 class="text-4xl font-semibold mb-12 text-center text-[#c7d2fe]">Meine Entwicklung - Timeline</h2>
+    <div class="relative border-l-4 border-[#60a3bc] ml-4">
+      <div class="mb-10 ml-6">
+        <span class="absolute -left-6 bg-[#53354a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2022</span>
+        <h3 class="text-xl font-bold mb-1 text-[#bac8ff]">Erste Programmier-Erfahrungen</h3>
+        <p>Ich habe angefangen, Java zu lernen und einfache Programme geschrieben.</p>
+      </div>
+      <div class="mb-10 ml-6">
+        <span class="absolute -left-6 bg-[#53354a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2023</span>
+        <h3 class="text-xl font-bold mb-1 text-[#bac8ff]">Minecraft Plugin Entwicklung</h3>
+        <p>Begonnen eigene Minecraft Plugins mit Spigot API zu programmieren.</p>
+      </div>
+      <div class="mb-10 ml-6">
+        <span class="absolute -left-6 bg-[#53354a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2024</span>
+        <h3 class="text-xl font-bold mb-1 text-[#bac8ff]">Webentwicklung mit HTML, CSS & JavaScript</h3>
+        <p>Erste eigene Webseiten erstellt und meine Fähigkeiten stetig erweitert.</p>
+      </div>
+      <div class="mb-10 ml-6">
+        <span class="absolute -left-6 bg-[#53354a] rounded-full w-12 h-12 flex items-center justify-center text-white font-bold">2025</span>
+        <h3 class="text-xl font-bold mb-1 text-[#bac8ff]">Fortgeschrittene Projekte & Portfolio</h3>
+        <p>Portfolio Seite erstellt und an anspruchsvollen Plugins gearbeitet.</p>
+      </div>
     </div>
-    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-      <h3 class="text-2xl font-bold mb-2">JavaScript</h3>
-      <p>Interaktive UIs, API-Integration</p>
-    </div>
-    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-      <h3 class="text-2xl font-bold mb-2">PHP</h3>
-      <p>Web Backends & Datenbankanbindung</p>
-    </div>
-    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-      <h3 class="text-2xl font-bold mb-2">MySQL</h3>
-      <p>Datenbank Design & Queries</p>
-    </div>
-    <div class="bg-purple-900 bg-opacity-40 rounded-2xl p-6 hover:bg-purple-800 transition">
-      <h3 class="text-2xl font-bold mb-2">Linux Server</h3>
-      <p>Debian, Ubuntu, Server Administration</p>
-    </div>
+  </section>
+
+  <!-- Kontakt Section -->
+  <section id="contact" class="py-20 text-center">
+    <h2 class="text-4xl font-semibold mb-6 text-[#c7d2fe]">Kontakt</h2>
+    <p class="text-[#a9b2d1] max-w-xl mx-auto">
+      Schreib mir gerne eine E-Mail an 
+      <a href="mailto:deinname@example.com" class="underline hover:text-[#60a3bc]">deinname@example.com</a>.<br>
+      Bitte beschreibe im Betreff kurz dein Anliegen, z.B. <strong>"Plugin Anfrage"</strong> oder <strong>"Web Projekt"</strong>, damit ich deine Nachricht schneller zuordnen kann.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1c1c3c] bg-opacity-95 text-center py-6 mt-20 text-[#a9b2d1]">
+    <p>Build with ❤️ by Ma254</p>
+  </footer>
+
+  <!-- Cookie Consent -->
+  <div id="cookie-consent" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#1c1c3c] bg-opacity-95 text-white rounded-xl px-6 py-4 shadow-lg max-w-xl flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 z-50">
+    <p class="text-center md:text-left max-w-md text-[#a9b2d1]">
+      Diese Website verwendet Cookies, um dir das beste Erlebnis zu bieten. Mit der Nutzung stimmst du unserer 
+      <a href="#" class="underline hover:text-[#60a3bc]">Datenschutzerklärung</a> zu.
+    </p>
+    <button id="accept-cookies" class="bg-[#60a3bc] hover:bg-[#53354a] transition rounded-lg px-4 py-2 font-semibold">Akzeptieren</button>
   </div>
-</section>
 
-<!-- Countdown Section -->
-<section class="py-20 text-center" data-aos="fade-up">
-  <h2 class="text-4xl font-semibold mb-6">Nächstes Projekt Release</h2>
-  <div id="countdown" class="text-2xl font-bold"></div>
-</section>
+  <script>
+    // Cookie Consent speichern & ausblenden
+    const consent = localStorage.getItem('cookieConsent');
+    const consentEl = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('accept-cookies');
 
-<!-- Footer -->
-<footer class="bg-purple-900 bg-opacity-90 text-center py-6 mt-20">
-  <p>Build with ❤️ by Ma254</p>
-</footer>
-
-<!-- Cookie Consent -->
-<div id="cookie-consent" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-purple-800 bg-opacity-95 text-white rounded-xl px-6 py-4 shadow-lg max-w-xl flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 z-50">
-  <p class="text-center md:text-left max-w-md text-sm">
-    Diese Website verwendet Cookies. <a href="datenschutz.html" class="underline text-purple-300">Mehr erfahren</a>.
-  </p>
-  <button id="accept-cookies" class="bg-purple-600 hover:bg-purple-700 transition rounded-lg px-4 py-2 text-sm font-semibold">OK</button>
-</div>
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-  new Typed("#typed", {
-    strings: ["Hey, ich bin Ma254", "Webentwickler", "Plugin Developer"],
-    typeSpeed: 50,
-    backSpeed: 25,
-    loop: true
-  });
-
-  // Burger Menu Toggle
-  const menuBtn = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
-  const closeBtn = document.getElementById('close-menu');
-  menuBtn.addEventListener('click', () => menu.classList.remove('hidden'));
-  closeBtn.addEventListener('click', () => menu.classList.add('hidden'));
-
-  // Cookie Consent
-  const consent = localStorage.getItem('cookieConsent');
-  const consentEl = document.getElementById('cookie-consent');
-  const acceptBtn = document.getElementById('accept-cookies');
-  if (consent === 'true') { consentEl.style.display = 'none'; }
-  acceptBtn.addEventListener('click', () => {
-    localStorage.setItem('cookieConsent', 'true');
-    consentEl.style.display = 'none';
-  });
-
-  // Countdown
-  const countdownEl = document.getElementById('countdown');
-  const releaseDate = new Date("2025-08-01T00:00:00").getTime();
-  setInterval(() => {
-    const now = new Date().getTime();
-    const distance = releaseDate - now;
-    if (distance < 0) {
-      countdownEl.innerHTML = "Projekt veröffentlicht!";
-    } else {
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    if (consent === 'true') {
+      consentEl.style.display = 'none';
     }
-  }, 1000);
-</script>
+
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'true');
+      consentEl.style.display = 'none';
+    });
+
+
+    // Countdown Timer für nächstes Großprojekt
+    const countdown = document.getElementById("countdown");
+    const releaseDate = new Date("2025-08-01T12:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = releaseDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        countdown.innerHTML = "Projekt Released!";
+      } else {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+    }, 1000);
+  </script>
+
 </body>
 </html>
